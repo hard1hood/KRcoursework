@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.loginT = new System.Windows.Forms.TextBox();
             this.passwordT = new System.Windows.Forms.TextBox();
@@ -50,16 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(18, 421);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 39);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Form2";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // linkLabel1
             // 
@@ -216,7 +205,6 @@
             this.Controls.Add(this.passwordT);
             this.Controls.Add(this.loginT);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox3);
@@ -241,7 +229,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.TextBox loginT;
         private System.Windows.Forms.TextBox passwordT;

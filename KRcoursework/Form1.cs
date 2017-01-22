@@ -23,9 +23,7 @@ namespace KRcoursework
         
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 f2 = new Form2(); // создаем
-            f2.ShowDialog(); // показываем
+           
             
         }
 

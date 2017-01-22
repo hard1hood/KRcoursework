@@ -33,11 +33,15 @@ namespace KRcoursework
         }
         public bool CheckPass(string str)
         {
-            return (str.Length >= 5 && str.Length <= 15);
+            return (str.Length >= 4 && str.Length <= 15);
         }
         public bool PassConfirm(string pass1, string pass2)
         {
             return pass1 == pass2;
+        }
+        public bool checkLen (string str)
+        {
+            return (str != "" && str.Length < 50);
         }
        
     }

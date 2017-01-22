@@ -69,7 +69,7 @@ namespace KRcoursework
             else
                 label3.ForeColor = Color.ForestGreen;
 
-            if (!check.CheckName(workbookT.Text))//trudovaya
+            if (!check.checkLen(workbookT.Text))//trudovaya
             {
                 label4.ForeColor = Color.IndianRed;
                 regCompleted = false;
@@ -77,7 +77,16 @@ namespace KRcoursework
             else
                 label4.ForeColor = Color.ForestGreen;
 
-            if (!check.CheckName(loginT.Text))//login
+            if (!check.CheckName(subjectT.Text))//predmet
+            {
+                label11.ForeColor = Color.IndianRed;
+                regCompleted = false;
+            }
+            else
+                label11.ForeColor = Color.ForestGreen;
+
+
+            if (!check.checkLen(loginT.Text))//login
             {
                 label5.ForeColor = Color.IndianRed;
                 regCompleted = false;
@@ -93,32 +102,32 @@ namespace KRcoursework
             else
                 label6.ForeColor = Color.ForestGreen;
 
-            if (!check.CheckPass(passT.Text))//password
+            if (!check.CheckPass(passT.Text) || !check.checkLen(passT.Text))//password
             {
                 label7.ForeColor = Color.IndianRed;
-                label8.ForeColor = Color.IndianRed;
                 regCompleted = false;
             }
             else
                 label7.ForeColor = Color.ForestGreen;
 
-            if ((!check.PassConfirm(passT.Text, confpassT.Text)) && (!check.CheckPass(confpassT.Text)))//check password
+            if (!check.CheckPass(confpassT.Text) || !check.PassConfirm(passT.Text, confpassT.Text))//check password
             {
                 label8.ForeColor = Color.IndianRed;
                 regCompleted = false;
             }
             else
                 label8.ForeColor = Color.ForestGreen;
-                label7.ForeColor = Color.ForestGreen;
 
             if (regCompleted)
             {
                 
                 label10.Text = "Success!";
                 label10.ForeColor = Color.ForestGreen;
-                label10.Visible = true;
-                
-
+                //label10.Visible = true;
+                conR.Open();
+                OleDbCommand ins = new OleDbCommand("insert into users values('" + workbookT.Text + "','" + subjectT.Text + "','" + nameT.Text + "','" + lastnameT.Text+"','" + thirdnameT.Text + "','" + emailT.Text + "','" + loginT.Text + "','"+passT.Text+"')", conR);
+                ins.ExecuteNonQuery();
+                conR.Close();
             }
             else
             {
@@ -136,6 +145,23 @@ namespace KRcoursework
         private void registerF_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+           if( checkBox1.Checked) { subjectT.Text = "DEANERY"; subjectT.ReadOnly=true; } else { subjectT.ReadOnly = false; }
+        }
+
+        private void label8_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //this.Hide();//не прячем жту форму чтобы сохранить поля
+            Form2 f2 = new Form2(); // создаем
+            f2.ShowDialog(); // показываем
         }
     }
 }

@@ -13,6 +13,7 @@ namespace KRcoursework
 {
     public partial class Form2 : Form
     {
+        Check check = new Check();
         public Form2()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace KRcoursework
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             //registerF f5 = new registerF();
             //f5.ShowDialog(); // показываем//cохраняем данные в форме))

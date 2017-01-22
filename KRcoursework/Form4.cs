@@ -35,5 +35,16 @@ namespace KRcoursework
             registerF f5 = new registerF();// создаем
             f5.ShowDialog();// показываем
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2(); // создаем
+            f2.ShowDialog(); // показываем
+        }
     }
 }

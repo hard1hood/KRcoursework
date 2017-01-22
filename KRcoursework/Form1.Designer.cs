@@ -184,7 +184,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Days", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(197, 26);
+            this.label8.Location = new System.Drawing.Point(209, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(379, 68);
             this.label8.TabIndex = 24;

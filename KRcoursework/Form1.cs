@@ -103,7 +103,7 @@ namespace KRcoursework
                     {
                         MessageBox.Show("Authentication succsessful!\nLogging in into Teachers account");
                         this.Hide();
-                        teacherF f3 = new teacherF();// создаем
+                        teadcherF f3 = new teadcherF();// создаем
                         f3.ShowDialog();// показываем
                     }
                 }

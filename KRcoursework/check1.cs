@@ -9,6 +9,7 @@ namespace KRcoursework
 {
     class Check
     {
+        int state=1;
         public bool CheckName(string str)
         {
             int i;
@@ -39,10 +40,12 @@ namespace KRcoursework
         {
             return pass1 == pass2;
         }
-        public bool checkLen (string str)
+        public bool checkLen(string str)
         {
             return (str != "" && str.Length < 50);
         }
        
+
+
     }
 }

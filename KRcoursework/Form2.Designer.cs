@@ -38,11 +38,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(428, 461);
+            this.button1.Font = new System.Drawing.Font("Days", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(12, 461);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 40);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Back";
+            this.button1.Text = "назад";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -72,13 +73,14 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.Location = new System.Drawing.Point(6, 10);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(930, 418);
+            this.dataGridView1.Size = new System.Drawing.Size(768, 418);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(22, 459);
+            this.button2.Font = new System.Drawing.Font("Days", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(630, 387);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 41);
             this.button2.TabIndex = 3;
@@ -91,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(948, 542);
+            this.ClientSize = new System.Drawing.Size(786, 542);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.linkLabel1);

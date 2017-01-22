@@ -14,6 +14,7 @@ namespace KRcoursework
     public partial class registerF : Form
     {
         Check check = new Check();
+
         public registerF()
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace KRcoursework
         private void addB_Click(object sender, EventArgs e)
         {
             bool regCompleted = true;
-            
+
 
             if (!check.CheckName(lastnameT.Text))//фамилия  
             {
@@ -76,14 +77,21 @@ namespace KRcoursework
             }
             else
                 label4.ForeColor = Color.ForestGreen;
-
-            if (!check.CheckName(subjectT.Text))//predmet
+            try
             {
-                label11.ForeColor = Color.IndianRed;
-                regCompleted = false;
-            }
-            else
+                if (!check.CheckName(comboBoxSubj.SelectedItem.ToString()))//predmet
+
+                {
+                    label11.ForeColor = Color.IndianRed;
+                    regCompleted = false;
+                }
+                        else
                 label11.ForeColor = Color.ForestGreen;
+            }
+            catch
+            {
+                MessageBox.Show("Оберiть, будь-ласка, предмет");
+            }
 
 
             if (!check.checkLen(loginT.Text))//login
@@ -121,17 +129,26 @@ namespace KRcoursework
             if (regCompleted)
             {
                 
-                label10.Text = "Success!";
-                label10.ForeColor = Color.ForestGreen;
-                //label10.Visible = true;
+                MessageBox.Show("Success!");
+                //label10.ForeColor = Color.ForestGreen;
+                label10.Visible = false;
                 conR.Open();
-                OleDbCommand ins = new OleDbCommand("insert into users values('" + workbookT.Text + "','" + subjectT.Text + "','" + nameT.Text + "','" + lastnameT.Text+"','" + thirdnameT.Text + "','" + emailT.Text + "','" + loginT.Text + "','"+passT.Text+"')", conR);
-                ins.ExecuteNonQuery();
+                
+                try
+                {
+                    OleDbCommand ins = new OleDbCommand("insert into users values('" + workbookT.Text + "','" + comboBoxSubj.SelectedItem.ToString() + "','" + nameT.Text + "','" + lastnameT.Text + "','" + thirdnameT.Text + "','" + emailT.Text + "','" + loginT.Text + "','" + passT.Text + "')", conR);
+                    ins.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Для поля номер трудовоi та/або login необхiдно вказати унiкальне значення");
+                }
                 conR.Close();
             }
             else
             {
                 label10.Text = "Вказанi невалiднi данi!";
+                //MessageBox.Show("Вказанi невалiднi данi!");
                 label10.ForeColor = Color.IndianRed;
                 label10.Visible = true;
             }
@@ -147,11 +164,12 @@ namespace KRcoursework
             
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        /*private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-           if( checkBox1.Checked) { subjectT.Text = "DEANERY"; subjectT.ReadOnly=true; } else { subjectT.ReadOnly = false; }
+           if( checkBox1.Checked) { .Text = "DEANERY"; subjectT.ReadOnly=true; } else { subjectT.ReadOnly = false; }
+           //поле предмет становится неактивным и в него вписывается 'DEANERY'
         }
-
+        */
         private void label8_Click_1(object sender, EventArgs e)
         {
 

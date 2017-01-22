@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KRcoursework
 {
-    public partial class teacherF : Form
+    public partial class teadcherF : Form
     {
-        public teacherF()
+        public teadcherF()
         {
             InitializeComponent();
         }
@@ -27,6 +27,13 @@ namespace KRcoursework
             this.Hide();
             Form1 f1 = new Form1();
             f1.ShowDialog(); // показываем
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            gradesF fg = new gradesF();
+            fg.ShowDialog(); // показываем
         }
     }
 }

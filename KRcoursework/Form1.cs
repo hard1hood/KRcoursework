@@ -66,32 +66,47 @@ namespace KRcoursework
                     
         public void loginB_Click_1(object sender, EventArgs e)
         {
-            con2.Open();
-            OleDbCommand cmd = new OleDbCommand("select login,password from users where login=@loginT.Text and password=@passwordT.Text", con2);
-            cmd.Parameters.Add("user", loginT.Text);
-            cmd.Parameters.Add("pass", passwordT.Text);
+            String loginS = loginT.Text;
+
+
+            con2.Open();//первый con2 для проверки credentials
+            OleDbCommand cmd = new OleDbCommand("select login,password from users where login='"+loginT.Text+"'"+" and password='"+passwordT.Text+"'", con2);
+            //cmd.Parameters.Add("login", "'" + loginT.Text + "'"); // защита от иньекций, тестим пока без(не работает)
+            //cmd.Parameters.Add("password", "'" + passwordT.Text + "'");
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
             con2.Close();
-            
+
+            bool loginSuccessful = ((ds.Tables.Count > 0) && (ds.Tables[0].Rows.Count > 0));
+
+            con2.Open();//возможно можно сделать с одним con2(этот для проверки поля subject if deanery - вход для другого юзера
+            OleDbCommand cmdsubject = new OleDbCommand("select subject from users where login='" + loginT.Text + "'", con2);
+            bool deanerySuccessful = ((ds.Tables.Count > 0) && (ds.Tables[0].Rows.Count > 0));
+            OleDbDataAdapter dasubject = new OleDbDataAdapter(cmdsubject);
+            DataSet dssubject = new DataSet();
+            da.Fill(dssubject);
+            con2.Close();
+
+
 
             if (loginT.Text != "" && passwordT.Text != "" && loginT.Text.Length < 50 && passwordT.Text.Length < 50)
             {
                 con2.Open();
-                OleDbDataAdapter subject = new OleDbDataAdapter("select subject from users where login=?", con2);
-                subject.SelectCommand.Parameters.AddWithValue("p1", loginT.Text);
+                /*OleDbDataAdapter subject = new OleDbDataAdapter("select subject from users where login=?", con2);
+                subject.SelectCommand.Parameters.AddWithValue("p1", "'"+loginT.Text+"'");
+                /*
                 OleDbDataAdapter log = new OleDbDataAdapter("select login from users where login=?", con2);
-                log.SelectCommand.Parameters.AddWithValue("p2", loginT.Text);
+                log.SelectCommand.Parameters.AddWithValue("p2", "'" + loginT.Text + "'");
                 OleDbDataAdapter pass = new OleDbDataAdapter("select password from users where login=?", con2);
-                pass.SelectCommand.Parameters.AddWithValue("p3", loginT.Text);
-
+                pass.SelectCommand.Parameters.AddWithValue("p3", "'" + loginT.Text + "'");
+                */
                 
-                if (true) //проверка логина и пароля
+                if (loginSuccessful) //проверка логина и пароля
                 {
-                    MessageBox.Show("first account incoming!");
+                    MessageBox.Show("Authentication succsessful!");
 
-                    if (DataSet.Equals(subject, "DEANERY"))
+                    if (deanerySuccessful)
                     {
                         MessageBox.Show("Deanery account incoming!");
                         this.Hide();

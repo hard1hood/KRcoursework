@@ -79,13 +79,13 @@ namespace KRcoursework
             bool loginSuccessful = ((ds.Tables.Count > 0) && (ds.Tables[0].Rows.Count > 0));
 
             con2.Open();//возможно можно сделать с одним con2(этот для проверки поля subject if deanery - вход для другого юзера
-            OleDbCommand cmdsubject = new OleDbCommand("select subject from users where login='" + loginT.Text + "'", con2);
+            OleDbCommand cmdsubject = new OleDbCommand("select login,password from users where login='" + loginT.Text + "'"+" and password = '"+passwordT.Text+"' and subject='DEANERY'", con2);
             OleDbDataAdapter dasubject = new OleDbDataAdapter(cmdsubject);
             DataSet dssubject = new DataSet();
             dasubject.Fill(dssubject);
             con2.Close();
 
-            bool deanerySuccessful = ((dssubject.Tables.Count > 0) && (ds.Tables[0].Rows.Count != 1));
+            bool deanerySuccessful = ((dssubject.Tables.Count > 0) && (dssubject.Tables[0].Rows.Count > 0));
 
             if (loginT.Text != "" && passwordT.Text != "" && loginT.Text.Length < 50 && passwordT.Text.Length < 50)
             {
@@ -125,6 +125,8 @@ namespace KRcoursework
 
         private void registrationB_Click(object sender, EventArgs e)
         {
+
+
             this.Hide();
             registerF f5 = new registerF();// создаем
             f5.ShowDialog();// показываем

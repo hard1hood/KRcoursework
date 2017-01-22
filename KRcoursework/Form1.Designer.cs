@@ -37,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.loginB = new System.Windows.Forms.Button();
-            this.registrationB = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -137,17 +136,6 @@
             this.loginB.UseVisualStyleBackColor = true;
             this.loginB.Click += new System.EventHandler(this.loginB_Click_1);
             // 
-            // registrationB
-            // 
-            this.registrationB.Font = new System.Drawing.Font("Days", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.registrationB.Location = new System.Drawing.Point(289, 388);
-            this.registrationB.Name = "registrationB";
-            this.registrationB.Size = new System.Drawing.Size(236, 59);
-            this.registrationB.TabIndex = 4;
-            this.registrationB.Text = "registration";
-            this.registrationB.UseVisualStyleBackColor = true;
-            this.registrationB.Click += new System.EventHandler(this.registrationB_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.No;
@@ -222,7 +210,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(786, 542);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.registrationB);
             this.Controls.Add(this.loginB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -262,7 +249,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button loginB;
-        private System.Windows.Forms.Button registrationB;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;

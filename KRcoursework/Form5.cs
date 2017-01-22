@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace KRcoursework
 {
@@ -27,6 +28,20 @@ namespace KRcoursework
             this.Hide();
             Form1 f1 = new Form1();
             f1.ShowDialog(); // показываем
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //
+        OleDbConnection con2 = new OleDbConnection("Provider=MSDAORA;Data Source=XE;Persist Security Info=True;User ID=coursework;Password=cw1;Unicode=True;");//connection beeywen oracle and c#
+        //
+
+        private void addB_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

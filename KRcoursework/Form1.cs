@@ -58,17 +58,15 @@ namespace KRcoursework
         {
 
         }
+
+
         //
         OleDbConnection con2 = new OleDbConnection("Provider=MSDAORA;Data Source=XE;Persist Security Info=True;User ID=coursework;Password=cw1;Unicode=True;");//connection beeywen oracle and c#
-
         //
 
                     
         public void loginB_Click_1(object sender, EventArgs e)
         {
-            String loginS = loginT.Text;
-
-
             con2.Open();//первый con2 для проверки credentials
             OleDbCommand cmd = new OleDbCommand("select login,password from users where login='"+loginT.Text+"'"+" and password='"+passwordT.Text+"'", con2);
             //cmd.Parameters.Add("login", "'" + loginT.Text + "'"); // защита от иньекций, тестим пока без(не работает)
@@ -82,43 +80,33 @@ namespace KRcoursework
 
             con2.Open();//возможно можно сделать с одним con2(этот для проверки поля subject if deanery - вход для другого юзера
             OleDbCommand cmdsubject = new OleDbCommand("select subject from users where login='" + loginT.Text + "'", con2);
-            bool deanerySuccessful = ((ds.Tables.Count > 0) && (ds.Tables[0].Rows.Count > 0));
             OleDbDataAdapter dasubject = new OleDbDataAdapter(cmdsubject);
             DataSet dssubject = new DataSet();
-            da.Fill(dssubject);
+            dasubject.Fill(dssubject);
             con2.Close();
 
-
+            bool deanerySuccessful = ((dssubject.Tables.Count > 0) && (ds.Tables[0].Rows.Count != 1));
 
             if (loginT.Text != "" && passwordT.Text != "" && loginT.Text.Length < 50 && passwordT.Text.Length < 50)
             {
-                con2.Open();
-                /*OleDbDataAdapter subject = new OleDbDataAdapter("select subject from users where login=?", con2);
-                subject.SelectCommand.Parameters.AddWithValue("p1", "'"+loginT.Text+"'");
-                /*
-                OleDbDataAdapter log = new OleDbDataAdapter("select login from users where login=?", con2);
-                log.SelectCommand.Parameters.AddWithValue("p2", "'" + loginT.Text + "'");
-                OleDbDataAdapter pass = new OleDbDataAdapter("select password from users where login=?", con2);
-                pass.SelectCommand.Parameters.AddWithValue("p3", "'" + loginT.Text + "'");
-                */
                 
+
                 if (loginSuccessful) //проверка логина и пароля
                 {
-                    MessageBox.Show("Authentication succsessful!");
 
                     if (deanerySuccessful)
                     {
-                        MessageBox.Show("Deanery account incoming!");
+                        MessageBox.Show("Authentication succsessful!\nLogging in into Deanery`s account");
                         this.Hide();
                         dianeryF f4 = new dianeryF(); // создаем
                         f4.ShowDialog(); // показываем
                     }
                     else
                     {
-                        MessageBox.Show("teachers account incoming!");
+                        MessageBox.Show("Authentication succsessful!\nLogging in into Teachers account");
                         this.Hide();
                         teacherF f3 = new teacherF();// создаем
-                        f3.ShowDialog();
+                        f3.ShowDialog();// показываем
                     }
                 }
                 else
@@ -128,7 +116,7 @@ namespace KRcoursework
                 }
                 con2.Close();//обязательно закрывать, иначе при нажатие на кнопку еще раз открывается поверх и возникает exception
             }
-            else if (loginT.Text == "" && passwordT.Text == "")
+            else if (loginT.Text == "" || passwordT.Text == "")
                 MessageBox.Show("Empty enter!");
             else
                 MessageBox.Show("Enter should be less then 50 symbols!");
@@ -137,6 +125,9 @@ namespace KRcoursework
 
         private void registrationB_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            registerF f5 = new registerF();// создаем
+            f5.ShowDialog();// показываем
 
         }
         

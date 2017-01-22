@@ -43,6 +43,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -53,7 +54,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(27, 482);
+            this.button1.Location = new System.Drawing.Point(18, 421);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 39);
             this.button1.TabIndex = 6;
@@ -76,7 +77,7 @@
             // 
             this.loginT.BackColor = System.Drawing.SystemColors.Window;
             this.loginT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.loginT.Location = new System.Drawing.Point(292, 299);
+            this.loginT.Location = new System.Drawing.Point(283, 238);
             this.loginT.Name = "loginT";
             this.loginT.Size = new System.Drawing.Size(254, 20);
             this.loginT.TabIndex = 1;
@@ -85,7 +86,7 @@
             // passwordT
             // 
             this.passwordT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.passwordT.Location = new System.Drawing.Point(292, 341);
+            this.passwordT.Location = new System.Drawing.Point(283, 280);
             this.passwordT.Name = "passwordT";
             this.passwordT.Size = new System.Drawing.Size(254, 20);
             this.passwordT.TabIndex = 2;
@@ -96,7 +97,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(509, 308);
+            this.pictureBox1.Location = new System.Drawing.Point(527, 308);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(265, 222);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +109,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Days", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(197, 285);
+            this.label1.Location = new System.Drawing.Point(188, 224);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 34);
             this.label1.TabIndex = 8;
@@ -119,7 +120,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Days", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(121, 327);
+            this.label2.Location = new System.Drawing.Point(112, 266);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 34);
             this.label2.TabIndex = 9;
@@ -128,7 +129,7 @@
             // loginB
             // 
             this.loginB.Font = new System.Drawing.Font("Days", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginB.Location = new System.Drawing.Point(298, 389);
+            this.loginB.Location = new System.Drawing.Point(289, 328);
             this.loginB.Name = "loginB";
             this.loginB.Size = new System.Drawing.Size(236, 59);
             this.loginB.TabIndex = 3;
@@ -139,7 +140,7 @@
             // registrationB
             // 
             this.registrationB.Font = new System.Drawing.Font("Days", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.registrationB.Location = new System.Drawing.Point(298, 449);
+            this.registrationB.Location = new System.Drawing.Point(289, 388);
             this.registrationB.Name = "registrationB";
             this.registrationB.Size = new System.Drawing.Size(236, 59);
             this.registrationB.TabIndex = 4;
@@ -173,7 +174,7 @@
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(509, 97);
+            this.pictureBox4.Location = new System.Drawing.Point(527, 97);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(265, 222);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -202,6 +203,17 @@
             this.pictureBox6.TabIndex = 15;
             this.pictureBox6.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Days", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(197, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(379, 68);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "ВАС ВІТАЄ СИСТЕМА\r\n\"StudSuccess\"";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +221,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(786, 542);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.registrationB);
             this.Controls.Add(this.loginB);
             this.Controls.Add(this.label2);
@@ -217,12 +230,12 @@
             this.Controls.Add(this.loginT);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox5);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -255,6 +268,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label8;
     }
 }
 

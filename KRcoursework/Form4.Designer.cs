@@ -92,6 +92,7 @@
             this.button3.TabIndex = 25;
             this.button3.Text = "створити табель для нового студента";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -102,16 +103,17 @@
             this.button4.TabIndex = 26;
             this.button4.Text = "студенти з низькою успiшнiстю";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(534, 218);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 39);
+            this.label1.Size = new System.Drawing.Size(231, 52);
             this.label1.TabIndex = 27;
             this.label1.Text = "*також ви можете подивитися тут \r\nсписки викладачiв\r\n*можна зареєструвати працiвн" +
-    "ика деканату";
+    "ика деканату\r\nобравши DEANERY з випадаючого списку";
             // 
             // label2
             // 

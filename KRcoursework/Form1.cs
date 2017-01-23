@@ -11,7 +11,7 @@ using System.Data.OleDb;
 
 namespace KRcoursework
 {
-    
+   
     public partial class Form1 : Form
     {
         public Form1()
@@ -19,8 +19,12 @@ namespace KRcoursework
             InitializeComponent();
         }
 
-        //OleDbConnection con = new OleDbConnection("Provider=MSDAORA;Data Source=XE;Persist Security Info=True;User ID=coursework;Password=cw1;Unicode=True");//connection beeywen oracle and c#
-        
+        public static class Globals
+        {
+            public static String loginG = ""; // Modifiable in Code
+            public const Int32 VALUE = 10; // Unmodifiable
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
            

@@ -77,21 +77,7 @@ namespace KRcoursework
             }
             else
                 label4.ForeColor = Color.ForestGreen;
-            try
-            {
-                if (!check.CheckName(comboBoxSubj.SelectedItem.ToString()))//predmet
-
-                {
-                    label11.ForeColor = Color.IndianRed;
-                    regCompleted = false;
-                }
-                        else
-                label11.ForeColor = Color.ForestGreen;
-            }
-            catch
-            {
-                MessageBox.Show("Оберiть, будь-ласка, предмет");
-            }
+           
 
 
             if (!check.checkLen(loginT.Text))//login
@@ -125,6 +111,23 @@ namespace KRcoursework
             }
             else
                 label8.ForeColor = Color.ForestGreen;
+
+            label11.ForeColor = Color.IndianRed;
+            try //проверка предмета в конце для того чтобы окрашивались в красный все лейблы
+            {
+                if (!check.CheckName(comboBoxSubj.SelectedItem.ToString()))//predmet
+
+                {
+                    
+                    regCompleted = false;
+                }
+                else
+                    label11.ForeColor = Color.ForestGreen;
+            }
+            catch
+            {
+                MessageBox.Show("Оберiть, будь-ласка, предмет");
+            }
 
             if (regCompleted)
             {
@@ -180,6 +183,11 @@ namespace KRcoursework
             //this.Hide();//не прячем жту форму чтобы сохранить поля
             Form2 f2 = new Form2(); // создаем
             f2.ShowDialog(); // показываем
+        }
+
+        private void comboBoxSubj_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

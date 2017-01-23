@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using Oracle.DataAccess.Client;
+
 namespace KRcoursework
 {
     public partial class Form2 : Form
@@ -51,7 +52,7 @@ namespace KRcoursework
         private void button2_Click(object sender, EventArgs e)
         {
             con2.Open();
-            OleDbDataAdapter oda = new OleDbDataAdapter("select * from users", con2);
+            OleDbDataAdapter oda = new OleDbDataAdapter("select N_trud, Subject, FirstName, LastName, Рatronymic, Email from users", con2);
             DataTable dt = new DataTable();
             oda.Fill(dt);
             dataGridView1.DataSource = dt;

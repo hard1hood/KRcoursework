@@ -46,5 +46,17 @@ namespace KRcoursework
             Form2 f2 = new Form2(); // создаем
             f2.ShowDialog(); // показываем
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            registerStudentF fs = new registerStudentF();// создаем
+            fs.ShowDialog();// показываем
+        }
     }
 }

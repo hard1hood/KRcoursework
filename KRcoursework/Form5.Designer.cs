@@ -56,6 +56,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -276,6 +277,7 @@
             this.comboBoxSubj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSubj.FormattingEnabled = true;
             this.comboBoxSubj.Items.AddRange(new object[] {
+            "DEANERY",
             "DB ",
             "HighMath ",
             "History ",
@@ -295,6 +297,7 @@
             this.comboBoxSubj.Name = "comboBoxSubj";
             this.comboBoxSubj.Size = new System.Drawing.Size(315, 21);
             this.comboBoxSubj.TabIndex = 34;
+            this.comboBoxSubj.SelectedIndexChanged += new System.EventHandler(this.comboBoxSubj_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -332,11 +335,21 @@
             this.label15.TabIndex = 38;
             this.label15.Text = "*паролi мають спiвпадати";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(577, 250);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(204, 26);
+            this.label16.TabIndex = 39;
+            this.label16.Text = "*DEANERY - реєстрацiя представника \r\nдеканату";
+            // 
             // registerF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 542);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -405,5 +418,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }

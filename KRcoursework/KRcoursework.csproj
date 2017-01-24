@@ -92,11 +92,11 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="registerF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="registerF.Designer.cs">
+      <DependentUpon>registerF.cs</DependentUpon>
     </Compile>
     <Compile Include="gradesF.cs">
       <SubType>Form</SubType>
@@ -111,6 +111,12 @@
     </Compile>
     <Compile Include="registerStudentF.Designer.cs">
       <DependentUpon>registerStudentF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="studentListF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentListF.Designer.cs">
+      <DependentUpon>studentListF.cs</DependentUpon>
     </Compile>
     <Compile Include="teadcherF.cs">
       <SubType>Form</SubType>
@@ -130,8 +136,8 @@
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="registerF.resx">
+      <DependentUpon>registerF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gradesF.resx">
       <DependentUpon>gradesF.cs</DependentUpon>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="registerStudentF.resx">
       <DependentUpon>registerStudentF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentListF.resx">
+      <DependentUpon>studentListF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="teadcherF.resx">
       <DependentUpon>teadcherF.cs</DependentUpon>

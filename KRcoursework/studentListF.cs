@@ -47,8 +47,8 @@ namespace KRcoursework
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            registerF f1 = new registerF();
-            f1.ShowDialog();
+            //registerStudentF f1 = new registerStudentF();
+            //f1.ShowDialog();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

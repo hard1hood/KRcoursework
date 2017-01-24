@@ -23,7 +23,7 @@ namespace KRcoursework
         {
 
             this.Hide();
-            registerF f1 = new registerF();
+            dianeryF f1 = new dianeryF();
             f1.ShowDialog();
 
         }
@@ -36,6 +36,7 @@ namespace KRcoursework
 
         //
         OleDbConnection conR = new OleDbConnection("Provider=MSDAORA;Data Source=XE;Persist Security Info=True;User ID=coursework;Password=cw1;Unicode=True;");//connection beeywen oracle and c#
+        OleDbConnection con2 = new OleDbConnection("Provider=MSDAORA;Data Source=XE;Persist Security Info=True;User ID=coursework;Password=cw1;Unicode=True;");//connection beeywen oracle and c#
         //
 
         private void addB_Click(object sender, EventArgs e)
@@ -78,24 +79,39 @@ namespace KRcoursework
             if (regCompleted)
             {
 
-                MessageBox.Show("Success!");
-                //label10.ForeColor = Color.ForestGreen;
-                label10.Visible = false;
-                conR.Open();
+                //MessageBox.Show("Success!");
+
+                con2.Open();
+
 
                 try
                 {
-                    OleDbCommand ins = new OleDbCommand("insert into students values('" + workbookT.Text + "','" + nameT.Text + "','" + lastnameT.Text + "','" + thirdnameT.Text + "')", conR);
-                    OleDbCommand instS = new OleDbCommand("INSERT INTO Timesheet(ts_id, DB, HighMath, History, Philosophy, MathModeling, English, AppliedSoftware, Economy, WebTech, Phisics, PhisCulture, AnlineAnalis, MethodsMathPhys, Ukrainian, Programming, N_zalik) VALUES('1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '','"+workbookT.Text+"','Student'",conR);
+                    OleDbCommand ins = new OleDbCommand("insert into students values('" + workbookT.Text + "','" + nameT.Text + "','" + lastnameT.Text + "','" + thirdnameT.Text + "')", con2);
                     ins.ExecuteNonQuery();
+
+                    OleDbCommand instS = new OleDbCommand("INSERT INTO Timesheet VALUES('1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '','" + workbookT.Text + "')", con2);
                     instS.ExecuteNonQuery();
+                    
+                    
+                   
+
+                    label10.Text = "Success!";
+                    label10.Visible = true;
+                    label10.ForeColor = Color.ForestGreen;
+
+
 
                 }
                 catch
                 {
-                    MessageBox.Show("Для поля номер трудовоi та/або login необхiдно вказати унiкальне значення");
+                    //MessageBox.Show("Для поля номер трудовоi та/або login необхiдно вказати унiкальне значення");
+                    label10.ForeColor = Color.IndianRed;
+                    label10.Text = "Для поля номер трудовоi та/або login необхiдно вказати унiкальне значення";
                 }
-                conR.Close();
+                con2.Close();
+
+
+
             }
             else
             {

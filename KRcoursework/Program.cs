@@ -6,6 +6,12 @@ using System.Windows.Forms;
 
 namespace KRcoursework
 {
+    static class Data
+    {
+        public static string Login { get; set; }
+        public static string resultS { get; set; }
+    }
+
     static class Program
     {
         /// <summary>
@@ -18,5 +24,7 @@ namespace KRcoursework
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        
+
     }
 }

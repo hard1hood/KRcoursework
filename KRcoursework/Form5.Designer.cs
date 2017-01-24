@@ -246,7 +246,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Days", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(20, 412);
+            this.label10.Location = new System.Drawing.Point(250, 479);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(0, 34);
             this.label10.TabIndex = 27;

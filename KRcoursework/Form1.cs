@@ -17,13 +17,9 @@ namespace KRcoursework
         public Form1()
         {
             InitializeComponent();
+            
         }
-
-        public static class Globals
-        {
-            public static String loginG = ""; // Modifiable in Code
-            public const Int32 VALUE = 10; // Unmodifiable
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -69,6 +65,8 @@ namespace KRcoursework
                     
         public void loginB_Click_1(object sender, EventArgs e)
         {
+           Data.Login = loginT.Text;//Логин из первой формы!!!
+
             con2.Open();//первый con2 для проверки credentials
             OleDbCommand cmd = new OleDbCommand("select login,password from users where login='"+loginT.Text+"'"+" and password='"+passwordT.Text+"'", con2);
             //cmd.Parameters.Add("login", "'" + loginT.Text + "'"); // защита от иньекций, тестим пока без(не работает)
@@ -134,7 +132,8 @@ namespace KRcoursework
             f5.ShowDialog();// показываем
 
         }
-        
+       
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             

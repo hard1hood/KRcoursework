@@ -24,5 +24,19 @@ namespace KRcoursework
             dianeryF f4 = new dianeryF();//create
             f4.ShowDialog(); // показываем
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        //
+        OleDbConnection con2 = new OleDbConnection("Provider=MSDAORA;Data Source=XE;Persist Security Info=True;User ID=coursework;Password=cw1;Unicode=True;");//connection beeywen oracle and c#
+        //
+        private void deductionF_Load(object sender, EventArgs e)
+        {
+
+            
+           
+        }
     }
 }

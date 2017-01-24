@@ -86,7 +86,10 @@ namespace KRcoursework
                 try
                 {
                     OleDbCommand ins = new OleDbCommand("insert into students values('" + workbookT.Text + "','" + nameT.Text + "','" + lastnameT.Text + "','" + thirdnameT.Text + "')", conR);
+                    OleDbCommand instS = new OleDbCommand("INSERT INTO Timesheet(ts_id, DB, HighMath, History, Philosophy, MathModeling, English, AppliedSoftware, Economy, WebTech, Phisics, PhisCulture, AnlineAnalis, MethodsMathPhys, Ukrainian, Programming, N_zalik) VALUES('1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '','"+workbookT.Text+"','Student'",conR);
                     ins.ExecuteNonQuery();
+                    instS.ExecuteNonQuery();
+
                 }
                 catch
                 {

@@ -7,20 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace KRcoursework
 {
-    public partial class attestF : Form
+    public partial class deductionF : Form
     {
-        public attestF()
+        public deductionF()
         {
             InitializeComponent();
         }
 
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            dianeryF f4 = new dianeryF();//create
+            f4.ShowDialog(); // показываем
         }
     }
 }

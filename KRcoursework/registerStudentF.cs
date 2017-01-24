@@ -103,5 +103,12 @@ namespace KRcoursework
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //this.Hide();//не прячем жту форму чтобы сохранить поля
+            studentListF f2 = new studentListF(); // создаем
+            f2.ShowDialog(); // показываем
+        }
     }
 }

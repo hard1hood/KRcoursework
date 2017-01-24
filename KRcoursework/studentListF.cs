@@ -32,5 +32,28 @@ namespace KRcoursework
             con2.Close();
             dataGridView1.ReadOnly = true;
         }
+
+        private void studentListF_Load(object sender, EventArgs e)
+        {
+            con2.Open();
+            OleDbDataAdapter oda = new OleDbDataAdapter("select N_zalik, FirstName, LastName, StGroup from students", con2);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con2.Close();
+            dataGridView1.ReadOnly = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            registerF f1 = new registerF();
+            f1.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

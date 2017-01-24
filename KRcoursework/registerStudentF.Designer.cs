@@ -182,8 +182,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 46);
             this.button2.TabIndex = 51;
-            this.button2.Text = "списки викладачiв";
+            this.button2.Text = "списки студентiв";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // registerStudentF
             // 

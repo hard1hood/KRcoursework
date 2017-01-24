@@ -67,13 +67,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="attestF.cs">
+    <Compile Include="check1.cs" />
+    <Compile Include="deductionF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="attestF.Designer.cs">
-      <DependentUpon>attestF.cs</DependentUpon>
+    <Compile Include="deductionF.Designer.cs">
+      <DependentUpon>deductionF.cs</DependentUpon>
     </Compile>
-    <Compile Include="check1.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,17 +86,17 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="dianeryF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="dianeryF.Designer.cs">
+      <DependentUpon>dianeryF.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="registerF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="registerF.Designer.cs">
+      <DependentUpon>registerF.cs</DependentUpon>
     </Compile>
     <Compile Include="gradesF.cs">
       <SubType>Form</SubType>
@@ -112,14 +112,20 @@
     <Compile Include="registerStudentF.Designer.cs">
       <DependentUpon>registerStudentF.cs</DependentUpon>
     </Compile>
+    <Compile Include="studentListF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentListF.Designer.cs">
+      <DependentUpon>studentListF.cs</DependentUpon>
+    </Compile>
     <Compile Include="teadcherF.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="teadcherF.Designer.cs">
       <DependentUpon>teadcherF.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="attestF.resx">
-      <DependentUpon>attestF.cs</DependentUpon>
+    <EmbeddedResource Include="deductionF.resx">
+      <DependentUpon>deductionF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -127,11 +133,11 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="dianeryF.resx">
+      <DependentUpon>dianeryF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="registerF.resx">
+      <DependentUpon>registerF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gradesF.resx">
       <DependentUpon>gradesF.cs</DependentUpon>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="registerStudentF.resx">
       <DependentUpon>registerStudentF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentListF.resx">
+      <DependentUpon>studentListF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="teadcherF.resx">
       <DependentUpon>teadcherF.cs</DependentUpon>

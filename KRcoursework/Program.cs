@@ -10,6 +10,7 @@ namespace KRcoursework
     {
         public static string Login { get; set; }
         public static string resultS { get; set; }
+        
     }
 
     static class Program

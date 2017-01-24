@@ -112,7 +112,7 @@ namespace KRcoursework
                 con2.Close();
             }
 
-            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT N_zalik , StGroup, FirstName, LastName," + Data.resultS + " From ShowStudMarks Order by StGroup, FirstName, LastName", con2);
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT N_zalik , StGroup, FirstName, LastName," + Data.resultS + " From ShowStudMarks ", con2);
             DataTable dt = new DataTable();
             oda.Fill(dt);
             dataGridView1.DataSource = dt;

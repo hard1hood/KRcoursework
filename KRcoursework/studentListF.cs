@@ -25,7 +25,7 @@ namespace KRcoursework
         private void button2_Click(object sender, EventArgs e)
         {
             con2.Open();
-            OleDbDataAdapter oda = new OleDbDataAdapter("select N_trud, Subject, FirstName, LastName, Patronymic, Email from users", con2);
+            OleDbDataAdapter oda = new OleDbDataAdapter("select N_zalik, FirstName, LastName, StGroup from students", con2);
             DataTable dt = new DataTable();
             oda.Fill(dt);
             dataGridView1.DataSource = dt;

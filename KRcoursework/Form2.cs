@@ -22,8 +22,13 @@ namespace KRcoursework
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //Form1 f1 = new Form1();
-            //f1.Hide();
+            con2.Open();
+            OleDbDataAdapter oda = new OleDbDataAdapter("select N_trud, Subject, FirstName, LastName, Patronymic, Email from users", con2);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con2.Close();
+            dataGridView1.ReadOnly = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
